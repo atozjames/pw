@@ -1,4 +1,15 @@
 self.addEventListener('push', function(e) {
+
+    if (e.data) {
+    
+        console.log('This push event has data: ', e.data.text());
+      
+    } else {
+        
+        console.log('This push event has no data.');
+      }
+
+    
     var options = {
       body: 'This notification was generated from a push!',
       icon: 'images/example.png',
@@ -14,7 +25,8 @@ self.addEventListener('push', function(e) {
           icon: 'images/xmark.png'},
       ]
     };
+
     e.waitUntil(
-      self.registration.showNotification('Hello world!', options)
+      self.registration.showNotification('Hello world!'+ e.data.text(), options)
     );
   });
