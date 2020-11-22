@@ -9,7 +9,7 @@ let vapidKeys ={
 
 push.setVapidDetails('mailto:atozjames@gmail.com',vapidKeys.publicKey,vapidKeys.privateKey);
 
-let sub={}
+let sub={"endpoint":"https://fcm.googleapis.com/fcm/send/fnGrIPnfcBQ:APA91bFE48yrlbv-zXh7tjd7zXMMjpleTDvfjUx2uCFmocYXvF15bD23zqGckIhJH_bj89W2NCxv771aYOcxdHCZFE0196fbOJT7NrREQmSSHwRWdRZeI0iiUMf2EjHpR4cKrfSaLXhJ","expirationTime":null,"keys":{"p256dh":"BIV8D_kor6kTUUl4Zrg7hpeW63P5_pny2JYDShM_TIlfxcwh-fHhNJEjFQlCbi62nutqfI0F029531ok-PYugVk","auth":"C4KD_-RI1335-CDECSXLww"}}
 
 push.sendNotification(sub, 'test message');
 
