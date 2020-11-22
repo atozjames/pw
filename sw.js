@@ -1,13 +1,6 @@
 self.addEventListener('push', function(e) {
 
-    if (e.data) {
-    
-        console.log('This push event has data: ', e.data.text());
-      
-    } else {
-        
-        console.log('This push event has no data.');
-      }
+   
 
     
     var options = {
@@ -25,6 +18,17 @@ self.addEventListener('push', function(e) {
           icon: 'images/xmark.png'},
       ]
     };
+
+   
+    if (e.data) {
+    
+        self.registration.showNotification(e.data.text(), options)
+      
+    } else {
+        
+        console.log('This push event has no data.');
+    }
+
 
     e.waitUntil(
       self.registration.showNotification('Hello world!'+ e.data.text(), options)
